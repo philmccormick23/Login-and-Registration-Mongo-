@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+    <h1>Register Here</h1>
+    <% if(messages.registration) { %>
+        <% for (var x of messages.registration) { %>
+            <h3><%= x %></h3>
+        <% } %>
+    <% } %>
+
+    
+    <form action="/register" method="post">
+        <input type="text" class="form-control form-control-sm" name="email" placeholder="Email">
+        <input type="text" class="form-control form-control-sm" name="first_name" placeholder="First Name">
+        <input type="text" class="form-control form-control-sm" name="last_name" placeholder="Last Name">
+        <input type="password" class="form-control form-control-sm" name="password" placeholder="Password">
+        <input type="date" class="form-control form-control-sm" name="birthday">
+        <input type="submit" value='Register!'>
+    </form>
+
+    <h1>Login Here</h1>
+    <form action="/login" method="post">
+        <input type="text" class="form-control form-control-sm" name="email" placeholder="Email">
+        <input type="password" class="form-control form-control-sm" name="password" placeholder="Password">
+        <input type="submit" value='Login!'>
+    </form>
+
+
+</body>
+</html>
